@@ -1,0 +1,127 @@
+body {
+    background-image: url("./img/memphis-mini-dark.png");
+}
+
+.note-text {
+    font-size: 25px;
+    width: 120px;
+    text-align: left;
+    white-space: pre-line;
+    /* 
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+    position: relative;
+    overflow-y: visible; */
+}
+
+/* 
+.note-text:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    z-index: 1;
+    background: #007bff;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 7px;
+} */
+
+.none {
+    text-decoration: none;
+}
+
+.ready {
+    text-decoration: line-through #000;
+    color: #212529 !important;
+}
+
+.important {
+    font-weight: 700;
+}
+
+.active-btn {
+    background: #007bff;
+}
+
+.exl-active {
+    color: #007bff;
+}
+
+.ready.exl-active-symbol::after {
+    content: "!";
+    color: #212529 !important;
+}
+
+.exl-active-symbol::after {
+    content: "!";
+    color: #007bff;
+}
+
+.note-item-container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 0 65px 0 65px;
+}
+
+.check {
+    width: 26px;
+    height: 31px;
+    font-size: 31px;
+    color: rgb(20, 139, 20);
+    margin-right: 7px;
+    cursor: pointer;
+}
+
+.exclamation {
+    width: 26px;
+    height: 31px;
+    font-size: 31px;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.trash {
+    font-size: 31px;
+    color: rgb(197, 31, 31);
+    cursor: pointer;
+    position: relative;
+    bottom: 2px;
+}
+
+.notes-list {
+    font-size: 25px;
+}
+
+.btn-filter-block {
+    display: block;
+    margin-top: 15px;
+}
+
+.md-form {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.not-found-text {
+    font-size: 25px;
+}
+
+.active {
+    color: rgb(197, 31, 31);
+}
+
+.done {
+    color: rgb(20, 139, 20);
+}
+
+.counter-notes {
+    font-size: 20px;
+}
+
+.todo {
+    font-size: 30px;
+}

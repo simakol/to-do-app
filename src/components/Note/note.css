@@ -1,0 +1,25 @@
+.container {
+    margin: 0 auto;
+    width: 300px;
+}
+
+.to-do-block {
+    background-color: rgb(172, 164, 164);
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input {
+    display: block;
+    margin: 0 auto;
+    outline: none;
+    border-radius: 7px;
+    padding-left: 3px;
+    border: 2px solid transparent;
+}
