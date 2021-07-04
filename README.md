@@ -20,3 +20,5 @@ Using this todo you can:
 ```
 This will install the npm modules and you will be able to launch project.
 
+## [Try it!](https://simakol.github.io/to-do-app)
+
