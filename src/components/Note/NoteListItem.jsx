@@ -5,7 +5,6 @@ function NoteListItem(props) {
   const isImportant = props.isImportant ? "important" : "none";
   const favClass = props.favClassActive || "fa-square-o";
   const exlClass = props.isImportant ? "exl-active" : "";
-  const exlClassSymbol = props.isImportant ? "exl-active-symbol" : "";
   let text = "";
   if (props.text.length > 8) {
     text = props.text
@@ -20,7 +19,7 @@ function NoteListItem(props) {
     <div className="note-item-container">
       <p
         data-title={`${text}`}
-        className={`note-text ${isReady} ${isImportant} ${exlClass} ${exlClassSymbol}`}
+        className={`note-text ${isReady} ${isImportant} ${exlClass}`}
         id={props.id}>
         {text}
       </p>

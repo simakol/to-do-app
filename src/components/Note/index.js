@@ -16,10 +16,10 @@ class Note extends Component {
         noteArr = [...this.props.newNoteArray];
         break;
       case "ready":
-        noteArr = noteArr.filter(item => item.isReady);
+        noteArr = noteArr.filter((item) => item.isReady);
         break;
       case "important":
-        noteArr = noteArr.filter(item => item.isImportant);
+        noteArr = noteArr.filter((item) => item.isImportant);
         break;
       default:
         noteArr = [...this.props.newNoteArray];
@@ -28,25 +28,25 @@ class Note extends Component {
     const searchText = this.props.searchText;
     let notFoundNoteText = "";
     if (searchText && this.props.newNoteArray.length) {
-      noteArr = noteArr.filter(item => {
+      noteArr = noteArr.filter((item) => {
         const noteText = item.text.toLowerCase().split("");
         const searchInputText = searchText.toLowerCase().split("");
-        let note = null;
-        let search = null;
+        let note = "";
+        let search = "";
         for (let i = 0; i < searchInputText.length; i++) {
           note += noteText[i];
           search += searchInputText[i];
         }
-
         return note === search;
       });
-      if (!noteArr.length)
-        notFoundNoteText = (
-          <p className="not-found-text">{`"${searchText.toLowerCase()}" note not found`}</p>
-        );
+      notFoundNoteText = !noteArr.length ? (
+        <p className="not-found-text">{`"${searchText.toLowerCase()}" note not found`}</p>
+      ) : (
+        ""
+      );
     }
 
-    const noteListItem = noteArr.map(item => {
+    const noteListItem = noteArr.map((item) => {
       return (
         <NoteListItem
           key={item.id}
@@ -62,7 +62,7 @@ class Note extends Component {
     let activeNote = 0;
     let doneNote = 0;
 
-    this.props.newNoteArray.forEach(item => {
+    this.props.newNoteArray.forEach((item) => {
       return !item.isReady ? activeNote++ : doneNote++;
     });
     return (
@@ -72,8 +72,8 @@ class Note extends Component {
           <div className="mt-2 counter-notes">
             <p className="badge badge-warning mr-2">{doneNote} Done</p>
             <p className="badge badge-success">{activeNote} Active</p>
-            </div>
-                      <div className="md-form mt-2">
+          </div>
+          <div className="md-form mt-2">
             <input
               className="form-control"
               type="text"
@@ -89,7 +89,7 @@ class Note extends Component {
             className="btn-group btn-filter-block"
             id="btnGroup"
             onClick={({ target, currentTarget }) => {
-              Array.from(currentTarget.children).forEach(item =>
+              Array.from(currentTarget.children).forEach((item) =>
                 item.classList.remove("active-btn")
               );
               if (target.attributes.id.value === "all") {
@@ -102,7 +102,7 @@ class Note extends Component {
             }}>
             <button
               id="all"
-              className={`btn btn-secondary`}
+              className={`btn btn-secondary active-btn`}
               onClick={this.props.showAll}>
               All
             </button>
@@ -125,8 +125,10 @@ class Note extends Component {
             Create note
           </button>
           {createNote}
-          <p className="notes-list">Notes list:</p>
-          {noteListItem}
+          {noteListItem.length ? <p className="notes-list">Notes list:</p> : ""}
+          <div className="notes-list-container">
+            <div className="notes-list-content">{noteListItem}</div>
+          </div>
           {notFoundNoteText}
         </div>
       </div>
@@ -134,17 +136,17 @@ class Note extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     noteCreateFied: state.noteCreateFied.showField,
     newNoteArray: state.notesReduser.noteArr,
     activeFilterBtn: state.notesReduser.activeFilterBtn,
     showNoteArr: state.notesReduser.showNoteArr,
-    searchText: state.notesReduser.searchText
+    searchText: state.notesReduser.searchText,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     showField: () => {
       dispatch({ type: "OPEN_FIELD" });
@@ -152,16 +154,16 @@ const mapDispatchToProps = dispatch => {
     closeField: () => {
       dispatch({ type: "CLOSE_FIELD" });
     },
-    ready: id => {
+    ready: (id) => {
       dispatch({ type: "NOTE_READY", id });
     },
-    delete: id => {                                                                                                
+    delete: (id) => {
       dispatch({ type: "NOTE_DELETE", id });
     },
-    search: text => {
+    search: (text) => {
       dispatch({ type: "NOTE_SEARCH", text });
     },
-    important: id => {
+    important: (id) => {
       dispatch({ type: "IMPORTANT_NOTE", id });
     },
     showAll: () => {
@@ -172,11 +174,8 @@ const mapDispatchToProps = dispatch => {
     },
     showImportant: () => {
       dispatch({ type: "SHOW_IMPORTANT_NOTE" });
-    }
+    },
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Note);
+export default connect(mapStateToProps, mapDispatchToProps)(Note);
