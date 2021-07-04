@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/to-do-app/static/css/main.e05a26f2.chunk.css",
+    "main.js": "/to-do-app/static/js/main.75a61438.chunk.js",
+    "main.js.map": "/to-do-app/static/js/main.75a61438.chunk.js.map",
+    "runtime~main.js": "/to-do-app/static/js/runtime~main.01361c46.js",
+    "runtime~main.js.map": "/to-do-app/static/js/runtime~main.01361c46.js.map",
+    "static/css/2.023c26ae.chunk.css": "/to-do-app/static/css/2.023c26ae.chunk.css",
+    "static/js/2.331a3ce3.chunk.js": "/to-do-app/static/js/2.331a3ce3.chunk.js",
+    "static/js/2.331a3ce3.chunk.js.map": "/to-do-app/static/js/2.331a3ce3.chunk.js.map",
+    "index.html": "/to-do-app/index.html",
+    "precache-manifest.e86457a1910467791c1f7a91e374ef35.js": "/to-do-app/precache-manifest.e86457a1910467791c1f7a91e374ef35.js",
+    "service-worker.js": "/to-do-app/service-worker.js",
+    "static/css/2.023c26ae.chunk.css.map": "/to-do-app/static/css/2.023c26ae.chunk.css.map",
+    "static/css/main.e05a26f2.chunk.css.map": "/to-do-app/static/css/main.e05a26f2.chunk.css.map",
+    "static/media/style.css": "/to-do-app/static/media/background.b9da2244.png",
+    "static/media/font-awesome.css": "/to-do-app/static/media/fontawesome-webfont.fee66e71.woff"
+  }
+}
